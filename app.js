@@ -54,8 +54,11 @@ catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
     const value = catchphraseInput.value;
     // push the new catchphrase to the catchphrase array in state
+    catchphrase.push(catchphraseInput);
     // clear out the form input's value so it's empty to the user
+    catchphraseInput.value = '';
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
+    displayCatchphrases();
 });
 
 function displayStats() {
@@ -65,7 +68,7 @@ function displayStats() {
 }
 
 function createStatsString(headNum, middleNum, bottomNum) {
-    return `You have changed the head ${headNum} times, the body ${middleNum} times, and the pants ${bottomNum} times. And nobody can forget your character's classic catchphrases:`;
+    return `You have changed the head ${headNum} times, the body ${middleNum} times, and the pants ${bottomNum} times.`;
 }
 
 function displayCatchphrases() {
